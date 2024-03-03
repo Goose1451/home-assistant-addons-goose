@@ -16,13 +16,14 @@ bashio::var.json \
         -out /etc/nginx/servers/ingress.conf
 
 # Generate direct access configuration, if enabled.
-if bashio::var.has_value "$(bashio::addon.port 80)"; then
+# if bashio::var.has_value "$(bashio::addon.port 80)"; then
+if bashio::var.has_value "${admin_port}"; then
     bashio::config.require.ssl
     bashio::var.json \
         certfile "$(bashio::config 'certfile')" \
         keyfile "$(bashio::config 'keyfile')" \
         leave_front_door_open "^$(bashio::config 'leave_front_door_open')" \
-        port "^$(bashio::addon.port 80)" \
+        # port "^$(bashio::addon.port 80)" \
         ssl "^$(bashio::config 'ssl')" \
         | tempio \
             -template /etc/nginx/templates/direct.gtpl \
