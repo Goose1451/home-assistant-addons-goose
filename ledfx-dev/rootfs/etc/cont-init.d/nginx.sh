@@ -5,6 +5,8 @@
 # ==============================================================================
 declare admin_port
 
+admin_port=$(bashio::addon.port 80)
+
 # Generate Ingress configuration
 bashio::var.json \
     interface "$(bashio::addon.ip_address)" \
