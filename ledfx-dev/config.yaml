@@ -13,10 +13,10 @@ arch:
 hassio_api: true
 auth_api: true
 ingress: true
-host_network: true
+# host_network: true
 host_dbus: true
 ingress_stream: true
-ingress_port: 0
+# ingress_port: 0
 ingress_entry: "#/./"
 panel_icon: mdi:emoticon-devil-outline
 panel_title: LedFx-dev
@@ -37,6 +37,6 @@ schema:
   log_level: list(debug|info|warning)?
   certfile: str
   keyfile: str
-  ssl: bool
-  leave_front_door_open: bool?
+  ssl: bool?
+  leave_front_door_open: bool
 image: "ghcr.io/yeonv/{arch}-addon-ledfx-dev"
