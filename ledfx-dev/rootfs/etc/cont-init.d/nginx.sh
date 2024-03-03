@@ -8,12 +8,12 @@ declare admin_port
 admin_port=$(bashio::addon.port 80)
 
 # Generate Ingress configuration
-bashio::var.json \
-    interface "$(bashio::addon.ip_address)" \
-    port "^$(bashio::addon.ingress_port)" \
-    | tempio \
-        -template /etc/nginx/templates/ingress.gtpl \
-        -out /etc/nginx/servers/ingress.conf
+#bashio::var.json \
+#    interface "$(bashio::addon.ip_address)" \
+#    port "^$(bashio::addon.ingress_port)" \
+#    | tempio \
+#        -template /etc/nginx/templates/ingress.gtpl \
+#        -out /etc/nginx/servers/ingress.conf
 
 # Generate direct access configuration, if enabled.
 # if bashio::var.has_value "$(bashio::addon.port 80)"; then
