@@ -5,7 +5,8 @@
 # ==============================================================================
 declare -a options
 
-options+=(--config /config)
+# options+=(--config /config)
+options+=(--config /data/ledfx)
 
 bashio::log.red \
         '-----------------------------------------------------------'
