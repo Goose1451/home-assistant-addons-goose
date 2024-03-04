@@ -32,5 +32,5 @@ if bashio::config.exists 'log_level'; then
     esac
 fi
 
-
-exec ledfx --host 127.0.0.1 --offline "${options[@]}"
+exec ledfx --offline --config /data/ledfx
+# exec ledfx --host 127.0.0.1 --offline "${options[@]}"
