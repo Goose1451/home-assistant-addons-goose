@@ -22,9 +22,9 @@ if bashio::var.has_value "${admin_port}"; then
     bashio::var.json \
         certfile "$(bashio::config 'certfile')" \
         keyfile "$(bashio::config 'keyfile')" \
+        ssl "^$(bashio::config 'ssl')" \
         leave_front_door_open "^$(bashio::config 'leave_front_door_open')" \
         # port "^$(bashio::addon.port 80)" \
-        ssl "^$(bashio::config 'ssl')" \
         | tempio \
             -template /etc/nginx/templates/direct.gtpl \
             -out /etc/nginx/servers/direct.conf
